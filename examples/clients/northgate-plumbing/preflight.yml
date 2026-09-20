@@ -1,0 +1,127 @@
+# Example client configuration.
+#
+# {period} and {prev_period} are substituted at run time, so one config covers every month.
+# Data in this folder is synthetic — see examples/README.md.
+
+client:
+  slug: northgate-plumbing
+  name: Northgate Plumbing & Heating
+
+sources:
+  ga4_sessions:
+    type: ga4_report_json
+    path: data/{period}/ga4-sessions.json
+  metrics:
+    type: metrics_csv
+    path: data/{period}/metrics.csv
+  prev_metrics:
+    type: metrics_csv
+    path: data/{prev_period}/metrics.csv
+  consent:
+    type: consent_csv
+    path: data/{period}/consent.csv
+  prev_consent:
+    type: consent_csv
+    path: data/{prev_period}/consent.csv
+  event_audit:
+    type: ga4audit_json
+    path: data/{period}/audit_report.json
+  gsc_coverage:
+    type: gsc_monitor_json
+    path: data/{period}/gsc-report.json
+  prev_gsc_coverage:
+    type: gsc_monitor_json
+    path: data/{prev_period}/gsc-report.json
+  conversions:
+    type: conversions_csv
+    path: data/{period}/conversions.csv
+  settings:
+    type: json
+    path: data/{period}/reporting-settings.json
+  prev_settings:
+    type: json
+    path: data/{prev_period}/reporting-settings.json
+
+checks:
+  - id: ga4-response-complete
+    type: ga4_response_integrity
+    title: GA4 said the data is complete
+    source: ga4_sessions
+    on_truncation: fail
+    on_sampled: warn
+    min_sampling_ratio: 0.95
+
+  - id: period-complete
+    type: period_completeness
+    title: Every day of the month has data
+    source: metrics
+    warn_above: 0
+    fail_above: 2
+
+  - id: sources-fresh
+    type: source_freshness
+    title: Sources updated through month end
+    sources: [metrics, consent, conversions]
+    warn_after_days: 1
+    fail_after_days: 5
+
+  - id: headline-metrics
+    type: metric_delta
+    title: Headline metrics moved within tolerance
+    source: metrics
+    previous_source: prev_metrics
+    metrics:
+      sessions: { warn_pct: 20, fail_pct: 45 }
+      conversions: { warn_pct: 15, fail_pct: 45 }
+      revenue: { warn_pct: 20, fail_pct: 50 }
+
+  - id: nothing-went-silent
+    type: zero_stream
+    title: No metric went to zero
+    source: metrics
+    previous_source: prev_metrics
+    metrics: [sessions, conversions, revenue, phone_calls]
+
+  - id: consent-stable
+    type: consent_shift
+    title: Consent denial rate is stable
+    source: consent
+    previous_source: prev_consent
+    warn_points: 5
+    fail_points: 15
+
+  - id: events-firing
+    type: event_coverage
+    title: Planned GA4 events fired
+    source: event_audit
+    on_missing: fail
+    on_param_issues: warn
+    min_health_score: 70
+
+  - id: indexing-steady
+    type: index_coverage
+    title: Search Console indexing steady
+    source: gsc_coverage
+    previous_source: prev_gsc_coverage
+    warn_drop_pct: 5
+    fail_drop_pct: 10
+
+  - id: no-double-counting
+    type: duplicate_conversions
+    title: Conversions are not double counted
+    source: conversions
+    warn_rate_pct: 1
+    fail_rate_pct: 5
+
+  - id: settings-unchanged
+    type: config_drift
+    title: Reporting settings unchanged
+    source: settings
+    previous_source: prev_settings
+    watched_keys:
+      - ga4.attribution_model
+      - ga4.conversion_window_days
+      - ga4.data_filters
+      - google_ads.conversion_counting
+      - google_ads.click_through_conversion_window_days
+    on_change: fail
