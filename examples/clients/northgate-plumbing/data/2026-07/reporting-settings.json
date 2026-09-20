@@ -1,0 +1,14 @@
+{
+  "ga4": {
+    "property_id": "398271465",
+    "attribution_model": "data_driven",
+    "conversion_window_days": 30,
+    "data_filters": [
+      "internal_traffic_exclude"
+    ]
+  },
+  "google_ads": {
+    "conversion_counting": "one",
+    "click_through_conversion_window_days": 30
+  }
+}

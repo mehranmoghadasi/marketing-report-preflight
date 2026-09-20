@@ -1,0 +1,395 @@
+{
+  "dimensionHeaders": [
+    {
+      "name": "date"
+    }
+  ],
+  "metricHeaders": [
+    {
+      "name": "sessions",
+      "type": "TYPE_INTEGER"
+    }
+  ],
+  "rows": [
+    {
+      "dimensionValues": [
+        {
+          "value": "20260701"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "299"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260702"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "312"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260703"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "356"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260704"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "300"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260705"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "305"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260706"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "315"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260707"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "266"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260708"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "306"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260709"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "320"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260710"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "340"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260711"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "255"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260712"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "281"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260713"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "255"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260714"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "342"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260715"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "328"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260716"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "249"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260717"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "363"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260718"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "361"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260719"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "323"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260720"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "319"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260721"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "263"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260722"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "245"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260723"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "308"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260724"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "251"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260725"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "267"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260726"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "273"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260727"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "247"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260728"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "300"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260729"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "297"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260730"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "346"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260731"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "308"
+        }
+      ]
+    }
+  ],
+  "rowCount": 31,
+  "metadata": {
+    "currencyCode": "CAD",
+    "timeZone": "America/Edmonton",
+    "subjectToThresholding": false,
+    "dataLossFromOtherRow": false
+  },
+  "kind": "analyticsData#runReport"
+}
