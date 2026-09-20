@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "marketing-report-preflight"
-version = "1.0.0"
+version = "1.0.1"
 description = "Preflight gate for client marketing reports: block the send when the data behind it is not trustworthy."
 readme = "README.md"
 requires-python = ">=3.10"

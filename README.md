@@ -1,6 +1,6 @@
 # Report Preflight
 
-[![Tests](https://img.shields.io/badge/tests-82%20passing-brightgreen?logo=pytest)](tests/)
+[![CI](https://github.com/mehranmoghadasi/marketing-report-preflight/actions/workflows/python-app.yml/badge.svg)](https://github.com/mehranmoghadasi/marketing-report-preflight/actions/workflows/python-app.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Checks](https://img.shields.io/badge/checks-10%20types-6d28d9)](docs/CHECKS.md)
@@ -26,7 +26,7 @@ Mockup — dashboard, Overview view (described in full in docs/screenshots/READM
 │                           │      The share of visitors declining analytics consent…  │
 │                           │      { "shift_points": 12.0, "warn_points": 5.0, … }     │
 │                           │  ▸ (PASS) events-firing          all planned events fir… │
-│                           │  ┌─ CLIENT-FACING DATA NOTES ─────────────────[ Copy ]─┐ │
+│                           │  ┌─ CLIENT-FACING DATA NOTES ─────────────────────[ Copy ]─┐ │
 │                           │  │ Before sending this report we checked the data …     │ │
 │                           │  └─────────────────────────────────────────────────────┘ │
 └───────────────────────────┴──────────────────────────────────────────────────────────┘
@@ -344,6 +344,10 @@ CI lives in `ci/python-app.yml`; copy it to `.github/workflows/python-app.yml` t
 on a fork.
 
 ## Changelog
+
+**1.0.1 — 2026-09-20**
+
+- `preflight.json` is now written as UTF-8 text (`ensure_ascii=False`) instead of `\uXXXX` escapes. The first CI run caught that the committed demo output and a fresh run differed only in how an em-dash was encoded — a reproducibility bug in the writer, fixed in the writer.
 
 **1.0.0 — 2026-09-20**
 

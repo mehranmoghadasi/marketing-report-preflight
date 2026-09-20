@@ -93,7 +93,8 @@ def _write_outputs(out_dir: Path, run, notes: str) -> list[Path]:
     written = []
     json_path = out_dir / "preflight.json"
     json_path.write_text(
-        json.dumps(run.to_dict(), indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        json.dumps(run.to_dict(), indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+        encoding="utf-8",
     )
     written.append(json_path)
     html_path = out_dir / "preflight.html"
@@ -133,7 +134,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         payload = run.to_dict()
         payload["notes_markdown"] = notes
         payload["written"] = [str(path) for path in written]
-        print(json.dumps(payload, indent=2, sort_keys=True))
+        print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False))
     else:
         print(render_console(run, colour=not args.no_color and sys.stdout.isatty()))
         print()
