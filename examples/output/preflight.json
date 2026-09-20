@@ -311,6 +311,6 @@
   },
   "period": "2026-08",
   "status": "fail",
-  "tool_version": "1.0.0",
+  "tool_version": "1.0.1",
   "verdict": "Do not send yet"
 }

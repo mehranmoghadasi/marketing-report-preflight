@@ -11,4 +11,4 @@ Before sending this report we checked the data behind it and found problems that
 - Search Console shows fewer pages known or indexed than in the previous period. Some of the change in search performance in this report is explained by that, not by ranking movement.
 - About 2.6% of recorded conversions this period were duplicate records. Conversion counts and cost-per-conversion have been reviewed with that in mind.
 
-_10 data checks run · 3 blocking · 5 caveats · 0 accepted. Report Preflight v1.0.0._
+_10 data checks run · 3 blocking · 5 caveats · 0 accepted. Report Preflight v1.0.1._
