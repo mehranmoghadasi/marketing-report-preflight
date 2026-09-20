@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marketing-report-preflight"
+version = "1.0.0"
+description = "Preflight gate for client marketing reports: block the send when the data behind it is not trustworthy."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mehran Moghadasi" }]
+keywords = ["marketing", "reporting", "data-quality", "ga4", "agency"]
+dependencies = [
+    "PyYAML>=6.0",
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27", "ruff>=0.5"]
+
+[project.scripts]
+report-preflight = "preflight.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mehranmoghadasi/marketing-report-preflight"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+preflight = ["web/*.html", "web/*.js", "web/*.css"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "src"]

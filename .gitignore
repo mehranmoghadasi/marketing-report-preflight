@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# runtime state — history databases are local, never committed
+*.db
+*.db-journal
+preflight.db
+
+# local client data (the examples/ tree is the only data in the repo)
+clients/
+.DS_Store
