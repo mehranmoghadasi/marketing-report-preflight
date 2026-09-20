@@ -1,0 +1,75 @@
+{
+  "health_score": 92,
+  "source": "export",
+  "period": "2026-08",
+  "events": [
+    {
+      "plan": {
+        "name": "form_submit",
+        "required_parameters": [
+          "form_id",
+          "form_name"
+        ],
+        "expected_minimum_count": 20
+      },
+      "status": "pass",
+      "count": 229,
+      "missing_params": [],
+      "partial_params": {},
+      "unverifiable_params": [],
+      "unexpected_params": []
+    },
+    {
+      "plan": {
+        "name": "book_appointment",
+        "required_parameters": [
+          "appointment_type"
+        ],
+        "expected_minimum_count": 20
+      },
+      "status": "pass",
+      "count": 118,
+      "missing_params": [],
+      "partial_params": {},
+      "unverifiable_params": [],
+      "unexpected_params": []
+    },
+    {
+      "plan": {
+        "name": "quote_request",
+        "required_parameters": [
+          "service"
+        ],
+        "expected_minimum_count": 20
+      },
+      "status": "pass",
+      "count": 74,
+      "missing_params": [],
+      "partial_params": {},
+      "unverifiable_params": [],
+      "unexpected_params": []
+    },
+    {
+      "plan": {
+        "name": "view_service_page",
+        "required_parameters": [
+          "service"
+        ],
+        "expected_minimum_count": 20
+      },
+      "status": "pass",
+      "count": 1602,
+      "missing_params": [],
+      "partial_params": {},
+      "unverifiable_params": [],
+      "unexpected_params": []
+    }
+  ],
+  "naming_issues": [],
+  "ghost_events": [
+    {
+      "name": "scroll_depth_75",
+      "count": 604
+    }
+  ]
+}

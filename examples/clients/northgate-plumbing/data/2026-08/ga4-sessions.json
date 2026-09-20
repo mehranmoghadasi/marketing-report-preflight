@@ -1,0 +1,377 @@
+{
+  "dimensionHeaders": [
+    {
+      "name": "date"
+    }
+  ],
+  "metricHeaders": [
+    {
+      "name": "sessions",
+      "type": "TYPE_INTEGER"
+    }
+  ],
+  "rows": [
+    {
+      "dimensionValues": [
+        {
+          "value": "20260801"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "300"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260802"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "314"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260803"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "358"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260804"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "302"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260805"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "307"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260806"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "317"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260807"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "268"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260808"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "308"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260809"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "322"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260810"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "342"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260811"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "257"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260812"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "282"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260813"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "256"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260814"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "344"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260815"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "330"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260816"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "250"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260817"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "365"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260818"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "363"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260819"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "325"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260820"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "320"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260821"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "264"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260822"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "247"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260823"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "310"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260824"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "252"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260825"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "268"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260826"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "275"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260827"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "249"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "20260828"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "305"
+        }
+      ]
+    }
+  ],
+  "rowCount": 28,
+  "metadata": {
+    "currencyCode": "CAD",
+    "timeZone": "America/Edmonton",
+    "subjectToThresholding": false,
+    "dataLossFromOtherRow": false,
+    "samplingMetadatas": [
+      {
+        "samplesReadCount": "6888000",
+        "samplingSpaceSize": "8400000"
+      }
+    ],
+    "dataTruncationReasons": [
+      {
+        "dataTruncationType": "DATA_TRUNCATION_TYPE_DATE_RANGE",
+        "dataTruncationMessage": "Query date range may not be fully served.",
+        "dataTruncationDateRanges": [
+          {
+            "startDate": "2026-08-29",
+            "endDate": "2026-08-31"
+          }
+        ]
+      }
+    ]
+  },
+  "kind": "analyticsData#runReport"
+}

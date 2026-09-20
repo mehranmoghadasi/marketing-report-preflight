@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-31",
+  "since": "2026-08-01",
+  "days": 31,
+  "sites": [
+    {
+      "siteUrl": "https://northgateplumbing.example/",
+      "label": "Northgate Plumbing",
+      "daysWithData": 31,
+      "clicks": 1980,
+      "impressions": 44310,
+      "knownUrls": 1180,
+      "inspected": {
+        "PASS": 88,
+        "NEUTRAL": 12
+      }
+    }
+  ],
+  "regressions": []
+}
