@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Report Preflight — Northgate Plumbing &amp; Heating 2026-08</title>
+<style>
+:root { --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#f8fafc; }
+* { box-sizing: border-box; }
+body { margin:0; padding:32px; background:var(--bg); color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+.wrap { max-width: 880px; margin:0 auto; }
+header { display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+  padding-bottom:16px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+h1 { font-size:20px; margin:0 0 4px; }
+h2 { font-size:15px; margin:32px 0 8px; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--muted); }
+.sub { color:var(--muted); font-size:13px; }
+.pill { display:inline-block; padding:6px 14px; border-radius:999px; font-weight:700;
+  font-size:13px; letter-spacing:.04em; }
+.verdict { font-size:17px; font-weight:600; margin:16px 0 0; }
+.counts { display:flex; gap:24px; margin:16px 0 0; flex-wrap:wrap; }
+.counts div { font-size:13px; color:var(--muted); }
+.counts strong { display:block; font-size:22px; color:var(--ink); }
+.check { background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px;
+  margin:8px 0; }
+.check summary { cursor:pointer; display:flex; gap:12px; align-items:baseline;
+  list-style:none; }
+.check summary::-webkit-details-marker { display:none; }
+.check .name { font-weight:600; }
+.check .msg { color:var(--muted); font-size:13px; }
+.check pre { background:var(--bg); border:1px solid var(--line); border-radius:8px;
+  padding:12px; overflow:auto; font-size:12px; margin:12px 0 0; }
+.waived { color:#92400e; font-size:12px; font-weight:600; }
+.notes { background:#fff; border:1px solid var(--line); border-left:4px solid #1d4fd7;
+  border-radius:10px; padding:16px 18px; white-space:pre-wrap; font-size:14px; }
+footer { margin-top:32px; color:var(--muted); font-size:12px;
+  border-top:1px solid var(--line); padding-top:12px; }
+@media print { body { background:#fff; padding:0; } .check { break-inside: avoid; } }
+</style></head>
+<body><div class="wrap">
+<header>
+  <div>
+    <h1>Report Preflight — Northgate Plumbing &amp; Heating</h1>
+    <div class="sub">Reporting period 2026-08</div>
+  </div>
+  <span class="pill" style="color:#991b1b;background:#fee2e2">FAIL</span>
+</header>
+<p class="verdict">Do not send yet</p>
+<div class="counts">
+  <div><strong>10</strong>checks run</div>
+  <div><strong>3</strong>blocking</div>
+  <div><strong>5</strong>warnings</div>
+  <div><strong>0</strong>accepted</div>
+</div>
+<h2>Checks</h2>
+<details class='check'><summary><span class='pill' style='color:#991b1b;background:#fee2e2'>FAIL</span><span class='name'>ga4-response-complete</span><span class='msg'>GA4 reports truncated data for 2026-08-29 to 2026-08-31 (DATA_TRUNCATION_TYPE_DATE_RANGE); Report is sampled: 82.0% of events analysed (threshold 95%)</span></summary><pre>{
+  &quot;data_truncation_dates&quot;: [],
+  &quot;data_truncation_messages&quot;: [
+    &quot;Query date range may not be fully served.&quot;
+  ],
+  &quot;data_truncation_ranges&quot;: [
+    {
+      &quot;end&quot;: &quot;2026-08-31&quot;,
+      &quot;start&quot;: &quot;2026-08-29&quot;
+    }
+  ],
+  &quot;data_truncation_types&quot;: [
+    &quot;DATA_TRUNCATION_TYPE_DATE_RANGE&quot;
+  ],
+  &quot;file&quot;: &quot;ga4-sessions.json&quot;,
+  &quot;min_sampling_ratio&quot;: 0.95,
+  &quot;row_count&quot;: 28,
+  &quot;sampling_ratio&quot;: 0.82,
+  &quot;source&quot;: &quot;ga4_sessions&quot;
+}</pre></details><details class='check'><summary><span class='pill' style='color:#991b1b;background:#fee2e2'>FAIL</span><span class='name'>period-complete</span><span class='msg'>3 of 31 days have no data (2026-08-29, 2026-08-30, 2026-08-31)</span></summary><pre>{
+  &quot;dates_outside_period&quot;: [],
+  &quot;days_present&quot;: 28,
+  &quot;expected_days&quot;: 31,
+  &quot;fail_above&quot;: 2,
+  &quot;file&quot;: &quot;metrics.csv&quot;,
+  &quot;missing_days&quot;: [
+    &quot;2026-08-29&quot;,
+    &quot;2026-08-30&quot;,
+    &quot;2026-08-31&quot;
+  ],
+  &quot;source&quot;: &quot;metrics&quot;,
+  &quot;warn_above&quot;: 0
+}</pre></details><details class='check'><summary><span class='pill' style='color:#92400e;background:#fef3c7'>WARN</span><span class='name'>sources-fresh</span><span class='msg'>metrics: last data point is 3 days before period end; consent: last data point is 3 days before period end; conversions: last data point is 3 days before period end</span></summary><pre>{
+  &quot;fail_after_days&quot;: 5,
+  &quot;period_end&quot;: &quot;2026-08-31&quot;,
+  &quot;sources&quot;: {
+    &quot;consent&quot;: {
+      &quot;lag_days&quot;: 3,
+      &quot;latest_date&quot;: &quot;2026-08-28&quot;
+    },
+    &quot;conversions&quot;: {
+      &quot;lag_days&quot;: 3,
+      &quot;latest_date&quot;: &quot;2026-08-28&quot;
+    },
+    &quot;metrics&quot;: {
+      &quot;lag_days&quot;: 3,
+      &quot;latest_date&quot;: &quot;2026-08-28&quot;
+    }
+  },
+  &quot;warn_after_days&quot;: 1
+}</pre></details><details class='check'><summary><span class='pill' style='color:#92400e;background:#fef3c7'>WARN</span><span class='name'>headline-metrics</span><span class='msg'>conversions: -38.1% vs last period (370 to 229); revenue: -22.0% vs last period (46,000 to 35,880)</span></summary><pre>{
+  &quot;metrics&quot;: {
+    &quot;conversions&quot;: {
+      &quot;current&quot;: 229.0,
+      &quot;fail_pct&quot;: 45.0,
+      &quot;pct_change&quot;: -38.11,
+      &quot;previous&quot;: 370.0,
+      &quot;warn_pct&quot;: 15.0
+    },
+    &quot;revenue&quot;: {
+      &quot;current&quot;: 35879.99999999999,
+      &quot;fail_pct&quot;: 50.0,
+      &quot;pct_change&quot;: -22.0,
+      &quot;previous&quot;: 46000.0,
+      &quot;warn_pct&quot;: 20.0
+    },
+    &quot;sessions&quot;: {
+      &quot;current&quot;: 8400.0,
+      &quot;fail_pct&quot;: 45.0,
+      &quot;pct_change&quot;: -9.68,
+      &quot;previous&quot;: 9300.0,
+      &quot;warn_pct&quot;: 20.0
+    }
+  },
+  &quot;previous_source&quot;: &quot;prev_metrics&quot;,
+  &quot;source&quot;: &quot;metrics&quot;
+}</pre></details><details class='check'><summary><span class='pill' style='color:#991b1b;background:#fee2e2'>FAIL</span><span class='name'>nothing-went-silent</span><span class='msg'>phone_calls: zero this period after 412 last period — tracking has most likely stopped</span></summary><pre>{
+  &quot;metrics&quot;: {
+    &quot;conversions&quot;: {
+      &quot;current&quot;: 229.0,
+      &quot;previous&quot;: 370.0
+    },
+    &quot;phone_calls&quot;: {
+      &quot;current&quot;: 0.0,
+      &quot;previous&quot;: 412.0
+    },
+    &quot;revenue&quot;: {
+      &quot;current&quot;: 35879.99999999999,
+      &quot;previous&quot;: 46000.0
+    },
+    &quot;sessions&quot;: {
+      &quot;current&quot;: 8400.0,
+      &quot;previous&quot;: 9300.0
+    }
+  },
+  &quot;previous_source&quot;: &quot;prev_metrics&quot;,
+  &quot;source&quot;: &quot;metrics&quot;
+}</pre></details><details class='check'><summary><span class='pill' style='color:#92400e;background:#fef3c7'>WARN</span><span class='name'>consent-stable</span><span class='msg'>Consent denial rate 34.0% vs 22.0% last period (+12.0 points)</span></summary><pre>{
+  &quot;denial_rate&quot;: 0.34,
+  &quot;denied&quot;: 2856.0,
+  &quot;fail_points&quot;: 15.0,
+  &quot;granted&quot;: 5544.0,
+  &quot;previous_denial_rate&quot;: 0.22,
+  &quot;previous_denied&quot;: 2046.0,
+  &quot;previous_granted&quot;: 7254.0,
+  &quot;previous_source&quot;: &quot;prev_consent&quot;,
+  &quot;shift_points&quot;: 12.0,
+  &quot;source&quot;: &quot;consent&quot;,
+  &quot;warn_points&quot;: 5.0
+}</pre></details><details class='check'><summary><span class='pill' style='color:#065f46;background:#d1fae5'>PASS</span><span class='name'>events-firing</span><span class='msg'>All planned events are firing with their required parameters</span></summary><pre>{
+  &quot;below_expected_events&quot;: [],
+  &quot;file&quot;: &quot;audit_report.json&quot;,
+  &quot;ghost_events&quot;: [
+    &quot;scroll_depth_75&quot;
+  ],
+  &quot;health_score&quot;: 92,
+  &quot;min_health_score&quot;: 70,
+  &quot;missing_events&quot;: [],
+  &quot;naming_issues&quot;: [],
+  &quot;parameter_issue_events&quot;: [],
+  &quot;source&quot;: &quot;event_audit&quot;
+}</pre></details><details class='check'><summary><span class='pill' style='color:#92400e;background:#fef3c7'>WARN</span><span class='name'>indexing-steady</span><span class='msg'>https://northgateplumbing.example/: indexed URL count down 8.1%</span></summary><pre>{
+  &quot;fail_drop_pct&quot;: 10.0,
+  &quot;previous_source&quot;: &quot;prev_gsc_coverage&quot;,
+  &quot;regressions_by_severity&quot;: {},
+  &quot;sites&quot;: {
+    &quot;https://northgateplumbing.example/&quot;: {
+      &quot;drop_pct&quot;: 8.1,
+      &quot;known_urls&quot;: 1180,
+      &quot;previous_known_urls&quot;: 1284
+    }
+  },
+  &quot;source&quot;: &quot;gsc_coverage&quot;,
+  &quot;warn_drop_pct&quot;: 5.0
+}</pre></details><details class='check'><summary><span class='pill' style='color:#92400e;background:#fef3c7'>WARN</span><span class='name'>no-double-counting</span><span class='msg'>6 of 229 conversion rows are repeats (2.6%) — book_appointment (4), form_submit (2)</span></summary><pre>{
+  &quot;distinct_conversion_ids&quot;: 223,
+  &quot;duplicate_rate_pct&quot;: 2.62,
+  &quot;duplicate_rows&quot;: 6,
+  &quot;duplicates_by_action&quot;: {
+    &quot;book_appointment&quot;: 4,
+    &quot;form_submit&quot;: 2
+  },
+  &quot;fail_rate_pct&quot;: 5.0,
+  &quot;file&quot;: &quot;conversions.csv&quot;,
+  &quot;most_repeated&quot;: [
+    {
+      &quot;conversion_id&quot;: &quot;202608-00019&quot;,
+      &quot;occurrences&quot;: 2
+    },
+    {
+      &quot;conversion_id&quot;: &quot;202608-00038&quot;,
+      &quot;occurrences&quot;: 2
+    },
+    {
+      &quot;conversion_id&quot;: &quot;202608-00044&quot;,
+      &quot;occurrences&quot;: 2
+    },
+    {
+      &quot;conversion_id&quot;: &quot;202608-00137&quot;,
+      &quot;occurrences&quot;: 2
+    },
+    {
+      &quot;conversion_id&quot;: &quot;202608-00167&quot;,
+      &quot;occurrences&quot;: 2
+    }
+  ],
+  &quot;source&quot;: &quot;conversions&quot;,
+  &quot;total_rows&quot;: 229,
+  &quot;warn_rate_pct&quot;: 1.0
+}</pre></details><details class='check'><summary><span class='pill' style='color:#065f46;background:#d1fae5'>PASS</span><span class='name'>settings-unchanged</span><span class='msg'>All 5 watched setting(s) unchanged since last period</span></summary><pre>{
+  &quot;changes&quot;: [
+    {
+      &quot;current&quot;: &quot;data_driven&quot;,
+      &quot;key&quot;: &quot;ga4.attribution_model&quot;,
+      &quot;status&quot;: &quot;unchanged&quot;
+    },
+    {
+      &quot;current&quot;: 30,
+      &quot;key&quot;: &quot;ga4.conversion_window_days&quot;,
+      &quot;status&quot;: &quot;unchanged&quot;
+    },
+    {
+      &quot;current&quot;: [
+        &quot;internal_traffic_exclude&quot;
+      ],
+      &quot;key&quot;: &quot;ga4.data_filters&quot;,
+      &quot;status&quot;: &quot;unchanged&quot;
+    },
+    {
+      &quot;current&quot;: &quot;one&quot;,
+      &quot;key&quot;: &quot;google_ads.conversion_counting&quot;,
+      &quot;status&quot;: &quot;unchanged&quot;
+    },
+    {
+      &quot;current&quot;: 30,
+      &quot;key&quot;: &quot;google_ads.click_through_conversion_window_days&quot;,
+      &quot;status&quot;: &quot;unchanged&quot;
+    }
+  ],
+  &quot;previous_source&quot;: &quot;prev_settings&quot;,
+  &quot;source&quot;: &quot;settings&quot;,
+  &quot;watched_keys&quot;: [
+    &quot;ga4.attribution_model&quot;,
+    &quot;ga4.conversion_window_days&quot;,
+    &quot;ga4.data_filters&quot;,
+    &quot;google_ads.conversion_counting&quot;,
+    &quot;google_ads.click_through_conversion_window_days&quot;
+  ]
+}</pre></details>
+<h2>Client-facing data notes</h2>
+<div class="notes">## Data notes — Northgate Plumbing &amp; Heating · 2026-08
+
+Before sending this report we checked the data behind it and found problems that affect the figures shown. Please read these notes alongside the numbers:
+
+- Google Analytics reported that some of this period&#x27;s data was not fully available for 2026-08-29 to 2026-08-31, so the totals shown understate actual activity. Google Analytics calculated this period from a sample covering 82% of events rather than all of them, so the figures are close estimates rather than exact counts.
+- This report covers 28 of the 31 days in 2026-08; 3 days of data are not available, so period totals are lower than the true figure.
+- At least one metric recorded nothing at all this period. This is being treated as a measurement problem rather than a performance result until it is confirmed.
+- One or more data sources stopped updating before the end of the period, so the figures shown are partial.
+- One or more headline numbers moved sharply against the previous period. The movement was reviewed before this report was sent; the commentary explains whether it reflects performance or a change in how the data is collected.
+- The share of visitors declining analytics consent changed by 12.0 percentage points this period (more visitors declining), which changes how much activity is measurable. Period-over-period comparisons are affected.
+- Search Console shows fewer pages known or indexed than in the previous period. Some of the change in search performance in this report is explained by that, not by ranking movement.
+- About 2.6% of recorded conversions this period were duplicate records. Conversion counts and cost-per-conversion have been reviewed with that in mind.
+
+_10 data checks run · 3 blocking · 5 caveats · 0 accepted. Report Preflight v1.0.0._
+</div>
+<footer>Report Preflight v1.0.0 — verdict is the worst
+unwaived check status (fail &gt; warn &gt; pass).</footer>
+</div></body></html>

@@ -1,0 +1,316 @@
+{
+  "checks": [
+    {
+      "check_id": "ga4-response-complete",
+      "check_type": "ga4_response_integrity",
+      "detail": {
+        "data_truncation_dates": [],
+        "data_truncation_messages": [
+          "Query date range may not be fully served."
+        ],
+        "data_truncation_ranges": [
+          {
+            "end": "2026-08-31",
+            "start": "2026-08-29"
+          }
+        ],
+        "data_truncation_types": [
+          "DATA_TRUNCATION_TYPE_DATE_RANGE"
+        ],
+        "file": "ga4-sessions.json",
+        "min_sampling_ratio": 0.95,
+        "row_count": 28,
+        "sampling_ratio": 0.82,
+        "source": "ga4_sessions"
+      },
+      "effective_status": "fail",
+      "note": "Google Analytics reported that some of this period's data was not fully available for 2026-08-29 to 2026-08-31, so the totals shown understate actual activity. Google Analytics calculated this period from a sample covering 82% of events rather than all of them, so the figures are close estimates rather than exact counts.",
+      "status": "fail",
+      "summary": "GA4 reports truncated data for 2026-08-29 to 2026-08-31 (DATA_TRUNCATION_TYPE_DATE_RANGE); Report is sampled: 82.0% of events analysed (threshold 95%)"
+    },
+    {
+      "check_id": "period-complete",
+      "check_type": "period_completeness",
+      "detail": {
+        "dates_outside_period": [],
+        "days_present": 28,
+        "expected_days": 31,
+        "fail_above": 2,
+        "file": "metrics.csv",
+        "missing_days": [
+          "2026-08-29",
+          "2026-08-30",
+          "2026-08-31"
+        ],
+        "source": "metrics",
+        "warn_above": 0
+      },
+      "effective_status": "fail",
+      "note": "This report covers 28 of the 31 days in 2026-08; 3 days of data are not available, so period totals are lower than the true figure.",
+      "status": "fail",
+      "summary": "3 of 31 days have no data (2026-08-29, 2026-08-30, 2026-08-31)"
+    },
+    {
+      "check_id": "sources-fresh",
+      "check_type": "source_freshness",
+      "detail": {
+        "fail_after_days": 5,
+        "period_end": "2026-08-31",
+        "sources": {
+          "consent": {
+            "lag_days": 3,
+            "latest_date": "2026-08-28"
+          },
+          "conversions": {
+            "lag_days": 3,
+            "latest_date": "2026-08-28"
+          },
+          "metrics": {
+            "lag_days": 3,
+            "latest_date": "2026-08-28"
+          }
+        },
+        "warn_after_days": 1
+      },
+      "effective_status": "warn",
+      "note": "One or more data sources stopped updating before the end of the period, so the figures shown are partial.",
+      "status": "warn",
+      "summary": "metrics: last data point is 3 days before period end; consent: last data point is 3 days before period end; conversions: last data point is 3 days before period end"
+    },
+    {
+      "check_id": "headline-metrics",
+      "check_type": "metric_delta",
+      "detail": {
+        "metrics": {
+          "conversions": {
+            "current": 229.0,
+            "fail_pct": 45.0,
+            "pct_change": -38.11,
+            "previous": 370.0,
+            "warn_pct": 15.0
+          },
+          "revenue": {
+            "current": 35879.99999999999,
+            "fail_pct": 50.0,
+            "pct_change": -22.0,
+            "previous": 46000.0,
+            "warn_pct": 20.0
+          },
+          "sessions": {
+            "current": 8400.0,
+            "fail_pct": 45.0,
+            "pct_change": -9.68,
+            "previous": 9300.0,
+            "warn_pct": 20.0
+          }
+        },
+        "previous_source": "prev_metrics",
+        "source": "metrics"
+      },
+      "effective_status": "warn",
+      "note": "One or more headline numbers moved sharply against the previous period. The movement was reviewed before this report was sent; the commentary explains whether it reflects performance or a change in how the data is collected.",
+      "status": "warn",
+      "summary": "conversions: -38.1% vs last period (370 to 229); revenue: -22.0% vs last period (46,000 to 35,880)"
+    },
+    {
+      "check_id": "nothing-went-silent",
+      "check_type": "zero_stream",
+      "detail": {
+        "metrics": {
+          "conversions": {
+            "current": 229.0,
+            "previous": 370.0
+          },
+          "phone_calls": {
+            "current": 0.0,
+            "previous": 412.0
+          },
+          "revenue": {
+            "current": 35879.99999999999,
+            "previous": 46000.0
+          },
+          "sessions": {
+            "current": 8400.0,
+            "previous": 9300.0
+          }
+        },
+        "previous_source": "prev_metrics",
+        "source": "metrics"
+      },
+      "effective_status": "fail",
+      "note": "At least one metric recorded nothing at all this period. This is being treated as a measurement problem rather than a performance result until it is confirmed.",
+      "status": "fail",
+      "summary": "phone_calls: zero this period after 412 last period — tracking has most likely stopped"
+    },
+    {
+      "check_id": "consent-stable",
+      "check_type": "consent_shift",
+      "detail": {
+        "denial_rate": 0.34,
+        "denied": 2856.0,
+        "fail_points": 15.0,
+        "granted": 5544.0,
+        "previous_denial_rate": 0.22,
+        "previous_denied": 2046.0,
+        "previous_granted": 7254.0,
+        "previous_source": "prev_consent",
+        "shift_points": 12.0,
+        "source": "consent",
+        "warn_points": 5.0
+      },
+      "effective_status": "warn",
+      "note": "The share of visitors declining analytics consent changed by 12.0 percentage points this period (more visitors declining), which changes how much activity is measurable. Period-over-period comparisons are affected.",
+      "status": "warn",
+      "summary": "Consent denial rate 34.0% vs 22.0% last period (+12.0 points)"
+    },
+    {
+      "check_id": "events-firing",
+      "check_type": "event_coverage",
+      "detail": {
+        "below_expected_events": [],
+        "file": "audit_report.json",
+        "ghost_events": [
+          "scroll_depth_75"
+        ],
+        "health_score": 92,
+        "min_health_score": 70,
+        "missing_events": [],
+        "naming_issues": [],
+        "parameter_issue_events": [],
+        "source": "event_audit"
+      },
+      "effective_status": "pass",
+      "status": "pass",
+      "summary": "All planned events are firing with their required parameters"
+    },
+    {
+      "check_id": "indexing-steady",
+      "check_type": "index_coverage",
+      "detail": {
+        "fail_drop_pct": 10.0,
+        "previous_source": "prev_gsc_coverage",
+        "regressions_by_severity": {},
+        "sites": {
+          "https://northgateplumbing.example/": {
+            "drop_pct": 8.1,
+            "known_urls": 1180,
+            "previous_known_urls": 1284
+          }
+        },
+        "source": "gsc_coverage",
+        "warn_drop_pct": 5.0
+      },
+      "effective_status": "warn",
+      "note": "Search Console shows fewer pages known or indexed than in the previous period. Some of the change in search performance in this report is explained by that, not by ranking movement.",
+      "status": "warn",
+      "summary": "https://northgateplumbing.example/: indexed URL count down 8.1%"
+    },
+    {
+      "check_id": "no-double-counting",
+      "check_type": "duplicate_conversions",
+      "detail": {
+        "distinct_conversion_ids": 223,
+        "duplicate_rate_pct": 2.62,
+        "duplicate_rows": 6,
+        "duplicates_by_action": {
+          "book_appointment": 4,
+          "form_submit": 2
+        },
+        "fail_rate_pct": 5.0,
+        "file": "conversions.csv",
+        "most_repeated": [
+          {
+            "conversion_id": "202608-00019",
+            "occurrences": 2
+          },
+          {
+            "conversion_id": "202608-00038",
+            "occurrences": 2
+          },
+          {
+            "conversion_id": "202608-00044",
+            "occurrences": 2
+          },
+          {
+            "conversion_id": "202608-00137",
+            "occurrences": 2
+          },
+          {
+            "conversion_id": "202608-00167",
+            "occurrences": 2
+          }
+        ],
+        "source": "conversions",
+        "total_rows": 229,
+        "warn_rate_pct": 1.0
+      },
+      "effective_status": "warn",
+      "note": "About 2.6% of recorded conversions this period were duplicate records. Conversion counts and cost-per-conversion have been reviewed with that in mind.",
+      "status": "warn",
+      "summary": "6 of 229 conversion rows are repeats (2.6%) — book_appointment (4), form_submit (2)"
+    },
+    {
+      "check_id": "settings-unchanged",
+      "check_type": "config_drift",
+      "detail": {
+        "changes": [
+          {
+            "current": "data_driven",
+            "key": "ga4.attribution_model",
+            "status": "unchanged"
+          },
+          {
+            "current": 30,
+            "key": "ga4.conversion_window_days",
+            "status": "unchanged"
+          },
+          {
+            "current": [
+              "internal_traffic_exclude"
+            ],
+            "key": "ga4.data_filters",
+            "status": "unchanged"
+          },
+          {
+            "current": "one",
+            "key": "google_ads.conversion_counting",
+            "status": "unchanged"
+          },
+          {
+            "current": 30,
+            "key": "google_ads.click_through_conversion_window_days",
+            "status": "unchanged"
+          }
+        ],
+        "previous_source": "prev_settings",
+        "source": "settings",
+        "watched_keys": [
+          "ga4.attribution_model",
+          "ga4.conversion_window_days",
+          "ga4.data_filters",
+          "google_ads.conversion_counting",
+          "google_ads.click_through_conversion_window_days"
+        ]
+      },
+      "effective_status": "pass",
+      "status": "pass",
+      "summary": "All 5 watched setting(s) unchanged since last period"
+    }
+  ],
+  "client": {
+    "name": "Northgate Plumbing & Heating",
+    "slug": "northgate-plumbing"
+  },
+  "counts": {
+    "blocking": 3,
+    "failed": 3,
+    "passed": 2,
+    "total": 10,
+    "waived": 0,
+    "warned": 5
+  },
+  "period": "2026-08",
+  "status": "fail",
+  "tool_version": "1.0.0",
+  "verdict": "Do not send yet"
+}
