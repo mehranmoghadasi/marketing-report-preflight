@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report Preflight</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+<div class="flex min-h-screen flex-col md:flex-row">
+
+  <!-- Sidebar -->
+  <aside class="w-full md:w-64 shrink-0 border-b md:border-b-0 md:border-r border-slate-200 bg-white">
+    <div class="flex items-center gap-2 px-4 py-4 border-b border-slate-200">
+      <span class="pf-mark" aria-hidden="true"></span>
+      <div>
+        <div class="font-semibold leading-tight">Report Preflight</div>
+        <div class="text-xs text-slate-500" id="version">v…</div>
+      </div>
+      <button id="nav-toggle" class="ml-auto md:hidden rounded px-2 py-1 text-sm
+        border border-slate-300" aria-expanded="false" aria-controls="nav-body">Menu</button>
+    </div>
+    <div id="nav-body" class="hidden md:block">
+      <nav class="px-2 py-3 text-sm" aria-label="Sections">
+        <button class="pf-nav is-active" data-view="overview">Overview</button>
+        <button class="pf-nav" data-view="history">Run history</button>
+        <button class="pf-nav" data-view="checks">Checks &amp; waivers</button>
+      </nav>
+      <div class="px-4 pb-4">
+        <label for="client" class="block text-xs font-semibold uppercase tracking-wide
+          text-slate-500 mb-2">Client</label>
+        <select id="client" class="pf-input"></select>
+        <p id="client-meta" class="mt-2 text-xs text-slate-500"></p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="flex-1 min-w-0">
+    <header class="sticky top-0 z-10 flex flex-wrap items-center gap-3 border-b
+      border-slate-200 bg-white/90 px-4 py-3 backdrop-blur">
+      <h1 class="text-base font-semibold" id="client-title">Loading…</h1>
+      <div class="ml-auto flex items-center gap-2">
+        <label for="period" class="text-xs text-slate-500">Period</label>
+        <input id="period" class="pf-input w-32" placeholder="2026-08" inputmode="numeric">
+        <button id="run" class="pf-btn">Run preflight</button>
+      </div>
+    </header>
+
+    <div id="error" class="hidden m-4 rounded-lg border border-rose-200 bg-rose-50
+      px-4 py-3 text-sm text-rose-800" role="alert"></div>
+
+    <div id="loading" class="hidden p-4" aria-live="polite">
+      <div class="pf-skel h-24 mb-3"></div>
+      <div class="pf-skel h-16 mb-2"></div>
+      <div class="pf-skel h-16 mb-2"></div>
+      <div class="pf-skel h-16"></div>
+    </div>
+
+    <!-- Overview -->
+    <section id="view-overview" class="p-4 space-y-4">
+      <div id="empty" class="rounded-xl border border-dashed border-slate-300 bg-white
+        p-8 text-center">
+        <p class="font-medium">No preflight run for this period yet</p>
+        <p class="mt-1 text-sm text-slate-500">Enter a period and run the checks before you
+          send the report.</p>
+      </div>
+
+      <div id="verdict" class="hidden rounded-xl border border-slate-200 bg-white p-5">
+        <div class="flex flex-wrap items-center gap-3">
+          <span id="verdict-pill" class="pf-pill">—</span>
+          <span id="verdict-text" class="text-lg font-semibold"></span>
+          <span id="verdict-period" class="text-sm text-slate-500"></span>
+        </div>
+        <dl class="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div class="pf-stat"><dt>Checks run</dt><dd id="stat-total">0</dd></div>
+          <div class="pf-stat"><dt>Blocking</dt><dd id="stat-failed">0</dd></div>
+          <div class="pf-stat"><dt>Warnings</dt><dd id="stat-warned">0</dd></div>
+          <div class="pf-stat"><dt>Accepted</dt><dd id="stat-waived">0</dd></div>
+        </dl>
+      </div>
+
+      <div id="checks-list" class="space-y-2"></div>
+
+      <div id="notes-card" class="hidden rounded-xl border border-slate-200 bg-white p-5">
+        <div class="flex items-center gap-3">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">
+            Client-facing data notes</h2>
+          <button id="copy-notes" class="pf-btn-ghost ml-auto">Copy</button>
+        </div>
+        <pre id="notes" class="mt-3 whitespace-pre-wrap text-sm leading-relaxed"></pre>
+      </div>
+    </section>
+
+    <!-- History -->
+    <section id="view-history" class="hidden p-4 space-y-4">
+      <div class="rounded-xl border border-slate-200 bg-white p-5">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">
+          Verdict by period</h2>
+        <div id="chart" class="mt-4 overflow-x-auto"></div>
+      </div>
+      <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr>
+              <th class="px-4 py-3">Run</th><th class="px-4 py-3">Period</th>
+              <th class="px-4 py-3">Status</th><th class="px-4 py-3">Checks</th>
+              <th class="px-4 py-3">Failing</th><th class="px-4 py-3">Warnings</th>
+              <th class="px-4 py-3">Recorded</th>
+            </tr>
+          </thead>
+          <tbody id="history-body" class="divide-y divide-slate-100"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Checks -->
+    <section id="view-checks" class="hidden p-4 space-y-4">
+      <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr><th class="px-4 py-3">Check</th><th class="px-4 py-3">Type</th>
+              <th class="px-4 py-3">What it verifies</th><th class="px-4 py-3">Waiver</th></tr>
+          </thead>
+          <tbody id="checks-body" class="divide-y divide-slate-100"></tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500">Waivers are recorded with a reason and the person who
+        accepted them, and the reason is quoted in the client data notes.</p>
+    </section>
+  </main>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

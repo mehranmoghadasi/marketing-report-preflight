@@ -1,0 +1,135 @@
+/* Design tokens and the handful of components Tailwind utilities do not cover.
+   Spacing follows a 4/8-pt scale; every interactive element has a visible focus ring. */
+
+:root {
+  --pf-brand: #1d4fd7;
+  --pf-pass-ink: #065f46;
+  --pf-pass-bg: #d1fae5;
+  --pf-warn-ink: #92400e;
+  --pf-warn-bg: #fef3c7;
+  --pf-fail-ink: #991b1b;
+  --pf-fail-bg: #fee2e2;
+  --pf-radius: 10px;
+}
+
+.pf-mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--pf-brand), #6d28d9);
+  display: inline-block;
+}
+
+.pf-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 14px;
+  background: #fff;
+}
+.pf-input:focus-visible,
+.pf-btn:focus-visible,
+.pf-btn-ghost:focus-visible,
+.pf-nav:focus-visible {
+  outline: 2px solid var(--pf-brand);
+  outline-offset: 2px;
+}
+
+.pf-btn {
+  background: var(--pf-brand);
+  color: #fff;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+.pf-btn:hover { background: #1740b0; }
+.pf-btn:active { transform: translateY(1px); }
+.pf-btn[disabled] { opacity: .55; cursor: not-allowed; }
+
+.pf-btn-ghost {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 13px;
+  background: #fff;
+}
+.pf-btn-ghost:hover { background: #f1f5f9; }
+
+.pf-nav {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #334155;
+}
+.pf-nav:hover { background: #f1f5f9; }
+.pf-nav.is-active { background: #eef2ff; color: var(--pf-brand); font-weight: 600; }
+
+.pf-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: #e2e8f0;
+  color: #334155;
+}
+.pf-pill.is-pass { background: var(--pf-pass-bg); color: var(--pf-pass-ink); }
+.pf-pill.is-warn { background: var(--pf-warn-bg); color: var(--pf-warn-ink); }
+.pf-pill.is-fail { background: var(--pf-fail-bg); color: var(--pf-fail-ink); }
+
+.pf-stat dt { font-size: 12px; color: #64748b; }
+.pf-stat dd { font-size: 24px; font-weight: 700; line-height: 1.2; }
+
+/* Check card: the micro-interaction is the chevron rotating and the body easing open. */
+.pf-check {
+  border: 1px solid #e2e8f0;
+  border-radius: var(--pf-radius);
+  background: #fff;
+}
+.pf-check > summary {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+.pf-check > summary::-webkit-details-marker { display: none; }
+.pf-check .pf-chevron { transition: transform 160ms ease; color: #94a3b8; }
+.pf-check[open] .pf-chevron { transform: rotate(90deg); }
+.pf-check[open] > .pf-body { animation: pf-reveal 160ms ease; }
+.pf-check pre {
+  margin: 0;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 12px;
+  overflow: auto;
+}
+
+@keyframes pf-reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.pf-skel {
+  background: linear-gradient(90deg, #eef2f7 25%, #e2e8f0 37%, #eef2f7 63%);
+  background-size: 400% 100%;
+  animation: pf-shimmer 1.4s ease infinite;
+  border-radius: var(--pf-radius);
+}
+@keyframes pf-shimmer {
+  from { background-position: 100% 50%; }
+  to   { background-position: 0 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-skel, .pf-check[open] > .pf-body, .pf-check .pf-chevron { animation: none; transition: none; }
+}
